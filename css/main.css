@@ -15,6 +15,7 @@ body {
   grid-template-areas:
     "header header"
     "main main";
+  background-color: #f2f1ed;
 }
 
 img {
@@ -25,11 +26,13 @@ img {
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
-  grid-area: header;
-  margin: 1rem;
   display: grid;
+  grid-area: header;
+  padding: 1rem;
+  padding-bottom: 0;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 4em;
+  grid-gap: 1rem;
 }
 
 .pano {
@@ -43,6 +46,8 @@ header {
   z-index: 1;
   width: 14rem;
   margin: 0;
+  display: flex;
+  padding-bottom: 1rem;
 }
 
 nav {
@@ -52,7 +57,7 @@ nav {
 }
 
 nav ul {
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -60,29 +65,29 @@ nav ul {
 
 nav li {
   display: inline-block;
-  font-family: "Patua One", serif;
+  font-family: "Patua One", sans-serif;
   margin: 0 .4em;
   font-size: 2rem;
 }
 
-nav a{
+nav a {
   color: #fff;
 }
 
 main {
   display: flex;
   grid-area: main;
-  margin: 1rem;
-  grid-gap: 1rem;
+  padding: 1rem;
 }
 
 figcaption h2 {
   color: #30658d;
-  font-family: "Patua One", serif;
+  font-family: "Patua One", sans-serif;
+  padding-top: 1rem;
 }
 
 figure {
-  margin: 0;
+  margin: .5rem;
 }
 
 figcaption h2,
