@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  line-height: 1.5;
+  font-family: Georgia, serif;
 }
 
 *,
@@ -8,15 +10,82 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+  grid-template-areas:
+    "header header"
+    "main main";
+}
+
 img {
   width: 100%;
+  display: block;
 }
 
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
+  grid-area: header;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 4em;
 }
 
-.banner {
-  display: grid;
+.pano {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.logo {
+  grid-column: 1/-1;
+  grid-row: 2;
+  z-index: 1;
+  width: 14rem;
+  margin: 0;
+}
+
+nav {
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  display: inline-block;
+  font-family: "Patua One", serif;
+  margin: 0 .4em;
+  font-size: 2rem;
+}
+
+nav a{
+  color: #fff;
+}
+
+main {
+  display: flex;
+  grid-area: main;
+  margin: 1rem;
+  grid-gap: 1rem;
+}
+
+figcaption h2 {
+  color: #30658d;
+  font-family: "Patua One", serif;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption h2,
+p {
+  margin: 0;
 }
